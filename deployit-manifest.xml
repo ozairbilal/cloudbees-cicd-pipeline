@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<udm.DeploymentPackage version="2.04.004.00-B02-CJE" application="vision">
+  <application />
+  <orchestrator>
+    <value>{{orchestrator}}</value>
+  </orchestrator>
+  <deployables>
+    <was.Ear name="/{{app_name}}" file="/{{app_name}}/vision-2.0-SNAPSHOT.ear">
+      <tags />
+      <scanPlaceholders>false</scanPlaceholders>
+      <deployedWeight>{{deployed_weight}}</deployedWeight>
+      <restartStrategy>{{application_restart}}</restartStrategy>
+      <containerRestartStrategy>{{container_restart}}</containerRestartStrategy>
+      <sharedLibraryNames />
+      <additionalInstallFlags />
+      <warClassLoaderPolicy>{{single_mutiple_war_classloader_policy}}</warClassLoaderPolicy>
+      <classloaderMode>PARENT_LAST</classloaderMode>
+      <roleMappings />
+      <roleUserMappings />
+      <isEdition>{{use_edition_control}}</isEdition>
+      <appEdition>2.04.004.00-B02</appEdition>
+      <rolloutStrategy>{{rollout_strategy}}</rolloutStrategy>
+      <groupSize>{{group_size}}</groupSize>
+      <resetStrategy>{{reset_strategy}}</resetStrategy>
+      <drainageInterval>{{drainage_interval}}</drainageInterval>
+      <webServerNames />
+      <runAsRoleMappings />
+      <sessionManagers />
+      <webModules>
+        <was.EmbeddedWebModuleSpec name="/{{app_name}}/{{embedded_war_name}}">
+          <contextRoot>{{contextroot}}</contextRoot>
+          <classloaderMode>PARENT_LAST</classloaderMode>
+          <virtualHostName>{{vhost}}</virtualHostName>
+          <webServerNames />
+          <sharedLibraryNames />
+          <sessionManagers />
+          <ejbRefs />
+          <resourceRefs />
+          <resourceEnvRefs />
+        </was.EmbeddedWebModuleSpec>
+      </webModules>
+      <ejbModules />
+    </was.Ear>
+  </deployables>
+  <applicationDependencies />
+  <dependencyResolution>LATEST</dependencyResolution>
+  <undeployDependencies>false</undeployDependencies>
+</udm.DeploymentPackage>
